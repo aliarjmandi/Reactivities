@@ -22,7 +22,7 @@ useEffect(() => {
     <div className="App">
       <Header as="h2" icon="users" content="Reactivites"/>
       
-      <List>
+      {/* <List>
         {activities.map((activity:any) =>
         (
           <List.Item key={activity.id}>
@@ -30,7 +30,7 @@ useEffect(() => {
           </List.Item>
         )
         )}
-      </List>
+      </List> */}
   
         
     
