@@ -1,13 +1,14 @@
 import { Button, Card, Image } from 'semantic-ui-react';
-import { Activity } from '../../../app/models/activity';
+import LoadingComponent from '../../../app/layout/LoadingComponent';
+import { useStore } from '../../../app/stores/store';
 
-interface Props {
-    activity: Activity;
-    cancelSelectActivity: () => void;
-    openForm: (id: string) => void;
-}
+const ActivityDetails = () => {
 
-const ActivityDetails = ({ activity, cancelSelectActivity, openForm }: Props) => {
+    const { activityStore } = useStore();
+    const { selectedActivity: activity ,openForm , cancelSelectActivity } = activityStore;
+    //بخاطر مشکل تایپ متغیر
+    if (!activity) return <LoadingComponent />;
+
     return (
         <Card fluid>
             <Image src={`/assets/categoryImages/${activity.category}.jpg`} />
